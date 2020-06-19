@@ -1,9 +1,9 @@
 sudo: required
 
 services:
-    -docker 
+    docker 
 
-before-install:
+before_install:
     - docker build -t docker-react -f Dockerfile.dev .
 
 script:
@@ -14,7 +14,7 @@ deploy:
     region: "us-east-2"
     app: "dockerreact"
     env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-us-east-2-251363892694"
+    bucket: "elasticbeanstalk-us-east-2-251363892694"
     bucket_path: "dockerreact"
     on: 
         branch: master
